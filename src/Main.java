@@ -30,11 +30,31 @@ public class Main {
 
         Car standardCar = new Car();
         Car myCar = new Car("Mercedes", "Sprinter", "Weeeeehuuuu");
+        System.out.println("Car without a driver\n");
+        myCar.drive();
+        myCar.park();
+        myCar.turnEngineOn();
+
+        System.out.println("----------------------------------------------------------\n");
 
 
+        System.out.println("Car with a driver\n");
         // Associating driverFour with a car
         Car carWithDriverOne = new Car("Opel", "Astra", "Oiiink", driverFour);
+        carWithDriverOne.drive();
+        carWithDriverOne.turnEngineOn();
+        carWithDriverOne.park();
+        carWithDriverOne.turnEngineOff();
+
+        System.out.println("----------------------------------------------------------\n");
 
 
+        System.out.println("Car with an underage driver\n");
+
+        Car carWithUnderAgedDriver = new Car("Nissan", "Qashqai", "Baaduuuu", driverThree);
+        carWithUnderAgedDriver.drive();
+        carWithUnderAgedDriver.turnEngineOn();
+        carWithUnderAgedDriver.park();
+        carWithUnderAgedDriver.turnEngineOff();
     }
 }

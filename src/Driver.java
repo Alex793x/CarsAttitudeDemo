@@ -29,6 +29,8 @@ public class Driver {
     public void setAge(int newAge) {
         this.age = newAge;
     }
+
+    // If Driver is less than 18 he can never have a driver's license
     public void setDriversLicense(boolean hasDriversLicense) {
         if (age < 18)
             this.driversLicense = false;

@@ -79,36 +79,37 @@ public class Car {
     }
 
     public void drive() {
-        if (this.getEngineStatus())
-            System.out.println(this.getBrand() + " " + this.getModel() + " is driving");
+        if (this.getEngineStatus() && this.driver != null && this.driver.getDriversLicense())
+            System.out.println(this.getBrand() + " " + this.getModel() + " is driving" +
+                    " with your driver " + this.driver.getName());
         else
-            System.out.println("Error, you need to turn on the car");
+            System.out.println("You can't drive since either you need to turn on the car, or get a driver with a driver's license");
 
     }
 
     public void park() {
-        if (this.driver != null)
+        if (this.driver != null && this.driver.getDriversLicense())
             System.out.println(this.getBrand() + " " + this.getModel() + "  been parked");
         else
-            System.out.println("Unfortunately you cant park a car without a driver");
+            System.out.println("You can't park, since either you need a driver or your driver doesn't have driver's license");
     }
 
     public void turnEngineOn() {
-        if (this.driver != null) {
+        if (this.driver != null && this.driver.getDriversLicense()) {
             setEngineStatus(true);
             System.out.println("The car has been turned on by your driver " + this.driver.getName());
         } else {
-            System.out.println("You need a driver to turn on the car");
+            System.out.println("Either you need a driver or your driver doesn't have driver's license");
         }
 
     }
 
     public void turnEngineOff() {
-        if (this.driver != null) {
+        if (this.driver != null && this.driver.getDriversLicense()) {
             setEngineStatus(true);
             System.out.println("The car has been turned off by your driver " + this.driver.getName());
         } else {
-            System.out.println("You need a driver to turn off the car");
+            System.out.println("Either you need a driver or your driver doesn't have driver's license");
         }
     }
 
