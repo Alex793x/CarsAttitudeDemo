@@ -120,6 +120,7 @@ public class Car {
                 ", model='" + model + '\'' +
                 ", honk='" + honk + '\'' +
                 ", engineStatus=" + engineStatus +
+                ", driver=" + driver +
                 '}';
     }
 }
