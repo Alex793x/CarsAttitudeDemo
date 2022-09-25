@@ -3,6 +3,7 @@ public class Car {
     private String model;
     private String honk;
     private boolean engineStatus;
+    private Driver driver;
 
 
     // Getters -----------------
@@ -20,6 +21,10 @@ public class Car {
 
     public boolean getEngineStatus() {
         return engineStatus;
+    }
+
+    public Driver getDriver() {
+        return driver;
     }
 
 
@@ -40,14 +45,33 @@ public class Car {
         this.engineStatus = newEngineStatus;
     }
 
-    // Car Constructor -----------
-    public Car() {
+    void setDriver(Driver newDriver) {
+        this.driver = newDriver;
     }
 
+    // Car Constructors -----------
+
+    // Default car constructor
+    public Car() {
+        brand = "Tesla";
+        model = "Model X";
+        honk = "Diiscoooo";
+        driver = null;
+    }
+
+    // Constructor without driver
     public Car(String brand, String model, String honk) {
-        this.brand = brand;
-        this.model = model;
-        this.honk = honk;
+        setBrand(brand);
+        setModel(model);
+        setHonk(honk);
+    }
+
+    //Constructor with a driver
+    public Car(String brand, String model, String honk, Driver driver) {
+        setBrand(brand);
+        setModel(model);
+        setHonk(honk);
+        setDriver(driver);
     }
 
     public void sound() {
@@ -55,7 +79,7 @@ public class Car {
     }
 
     public void drive() {
-        if (this.getEngineStatus() == true)
+        if (this.getEngineStatus())
             System.out.println(this.getBrand() + " " + this.getModel() + " is driving");
         else
             System.out.println("Error, you need to turn on the car");
@@ -67,13 +91,12 @@ public class Car {
     }
 
     public void turnEngineOn() {
-        this.engineStatus = true;
+        setEngineStatus(true);
     }
 
     public void turnEngineOff() {
-        this.engineStatus = false;
+        setEngineStatus(false);
     }
-
 
     @Override
     public String toString() {
