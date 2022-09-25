@@ -30,7 +30,10 @@ public class Driver {
         this.age = newAge;
     }
     public void setDriversLicense(boolean hasDriversLicense) {
-        this.driversLicense = hasDriversLicense;
+        if (age < 18)
+            this.driversLicense = false;
+        else
+            this.driversLicense = hasDriversLicense;
     }
 
 
@@ -47,5 +50,15 @@ public class Driver {
         setName(newName);
         setAge(newAge);
         setDriversLicense(hasDriversLicense);
+    }
+
+    @Override
+    public String toString() {
+        return "Driver{" +
+                "gender=" + gender +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", driversLicense=" + driversLicense +
+                '}';
     }
 }

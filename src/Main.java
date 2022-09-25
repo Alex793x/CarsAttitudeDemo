@@ -14,9 +14,26 @@ public class Main {
         System.out.println(manualInputCar.getHonk());       ---------||---------
          */
 
+        Driver driverOne = new Driver("Mason");
+        Driver driverTwo = new Driver('F', "Johanna", 42, true);
+        Driver driverThree = new Driver('M', "Kim", 17, true);
+        Driver driverFour = new Driver('F', "Jasmin", 19, true);
 
+        System.out.println(driverOne);
+        System.out.println();
+        System.out.println(driverTwo);
+        System.out.println();
+        System.out.println(driverThree);
+        System.out.println();
+        System.out.println(driverFour);
+        System.out.println();
+
+        Car standardCar = new Car();
         Car myCar = new Car("Mercedes", "Sprinter", "Weeeeehuuuu");
-        System.out.println(myCar);
+
+
+        // Associating driverFour with a car
+        Car carWithDriverOne = new Car("Opel", "Astra", "Oiiink", driverFour);
 
 
     }
