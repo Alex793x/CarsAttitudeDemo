@@ -28,8 +28,14 @@ public class Main {
         System.out.println(driverFour);
         System.out.println();
 
+        // Cars with and without drivers.
         Car standardCar = new Car();
+        System.out.println(standardCar);
+        System.out.println("----------------------------------------------------------\n");
+
+
         Car myCar = new Car("Mercedes", "Sprinter", "Weeeeehuuuu");
+        System.out.println(myCar + "\n");
         System.out.println("Car without a driver\n");
         myCar.drive();
         myCar.park();
@@ -41,6 +47,7 @@ public class Main {
         System.out.println("Car with a driver\n");
         // Associating driverFour with a car
         Car carWithDriverOne = new Car("Opel", "Astra", "Oiiink", driverFour);
+        System.out.println(carWithDriverOne + "\n");
         carWithDriverOne.drive();
         carWithDriverOne.turnEngineOn();
         carWithDriverOne.park();
